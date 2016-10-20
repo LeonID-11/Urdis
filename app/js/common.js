@@ -6,6 +6,14 @@ $(function() {
 		 delay: 200
 	});
 	
+	$(".slider").owlCarousel({
+		loop: true,
+		items: 1,
+		itemClass: "slide-wrap",
+		nav: true,
+		
+	});
+	
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {

@@ -186,16 +186,60 @@ h1, h2, h3, h4, h5, h6, .button
 .top-button
 	margin-top: 22px
 	
+.slider-wrap
+	.slider-nav-container
+		position: relative
+	.slider-nav
+		position: absolute
+		width: 100%
+		z-index: 2
+		color: #fff
+		font-size: 36px		
+		div
+			cursor: pointer
+			position: absolute
+			top: 180px
+			&:last-child
+				right: 0
+		
+	
 .slider
 	position: absolute
 	top: 0
 	width: 100%
+	.owl-dots
+		position: absolute
+		bottom: 50px
+		width: 100%
+		text-align: center
+		.owl-dot
+			display: inline-block
+			margin: 0 3px
+			width: 14px
+			height: 14px
+			background-color: darken($main-color, 3%)
+			border-radius: 10em
+			cursor: pointer
+			transition: background-color .25s ease
+			&.active
+				background-color: $accent-color
+				
 	.slide-wrap
 		float: left
+		&.active
+			h2
+				left: 0
+				opacity: 1
+			p
+				left: 0
+				opacity: 1
+			.slide-img-wrap
+					transform: scale(1)
+					opacity: 1
 	.slide		
 		color: #fff
 		padding-top: 280px
-		padding-bottom: 50px
+		padding-bottom: 110px
 		position: relative
 		h2
 			font-family: "RobotoCondensedLight", sans-serif
@@ -203,13 +247,21 @@ h1, h2, h3, h4, h5, h6, .button
 			margin-top: 0
 			line-height: em(19px)
 			margin-bottom: 20px
+			position: relative
+			left: 100px
+			opacity: 0
+			transition: all 1.5s ease
 			&:first-line
 				color: $accent-color
 		p
 			font-family: "RobotoLight", sans-serif
 			opacity: .75
 			margin-bottom: 40px
-			
+			position: relative
+			left: 100px
+			opacity: 0
+			transition: all 1s ease
+			transition-delay: 0.15s
 		&-bg
 			position: absolute
 			background: cover
@@ -233,7 +285,9 @@ h1, h2, h3, h4, h5, h6, .button
 .slide-img-wrap
 	max-width: 100%
 	padding-top: 15px
-	
+	opacity: 0
+	transform: scale(.8)
+	transition: all 1s ease
 
 @import "app/libs/owl.carousel/dist/assets/owl.carousel.min"	
 	

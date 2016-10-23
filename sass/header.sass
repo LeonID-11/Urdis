@@ -50,6 +50,10 @@ h1, h2, h3, h4, h5, h6, .button
 			background: none
 			font-family: "RobotoCondensedRegular", sans-serif
 			font-size: em(15px)
+			&.active
+				background: darken($main-color, 3%)
+				>a
+					color: $accent-color
 			&:hover
 				background: darken($main-color, 3%)
 				>a
@@ -97,7 +101,7 @@ h1, h2, h3, h4, h5, h6, .button
 	&-box
 		h4
 			font-family: "RobotoCondensedRegular", sans-serif
-			font-size:em(15px)
+			font-size: em(15px)
 			margin-top: 0
 			position: relative
 			&::after
@@ -116,8 +120,8 @@ h1, h2, h3, h4, h5, h6, .button
 		li	
 			display: inline-block
 			max-width: 48%
-			opacity: .35
-			font-size: em(13px)
+			opacity: .4
+			font-size: em(12px)
 			padding: 0 10px 0 22px
 			position: relative
 			&:only-child
@@ -134,7 +138,7 @@ h1, h2, h3, h4, h5, h6, .button
 	img
 		max-width: 100%
 .top-phone
-	font-size: em(20px)
+	font-size: em(19px)
 	margin-top: -3px
 	font-family: "RobotoCondensedRegular", sans-serif
 	span
@@ -207,6 +211,7 @@ h1, h2, h3, h4, h5, h6, .button
 	position: absolute
 	top: 0
 	width: 100%
+	overflow-x: hidden
 	.owl-dots
 		position: absolute
 		bottom: 50px
@@ -283,7 +288,8 @@ h1, h2, h3, h4, h5, h6, .button
 			padding-top: 80px
 			
 .slide-img-wrap
-	max-width: 100%
+	img
+		max-width: 100%
 	padding-top: 15px
 	opacity: 0
 	transform: scale(.8)

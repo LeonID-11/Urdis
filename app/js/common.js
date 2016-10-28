@@ -21,6 +21,33 @@ $(function() {
 		owl.trigger('prev.owl.carousel');
 	})
 	
+	$(".sf-menu").after("<div id='my-menu'>");
+	$(".sf-menu").clone().appendTo("#my-menu");
+	$("#my-menu").find("*").attr("style", "");
+	$("#my-menu").find("ul").removeClass("sf-menu");
+	$("#my-menu").mmenu({
+		extensions : [ 'widescreen', 'theme-white', 'effect-menu-slide', 'pagedim-black' ],
+		navbar: {
+			title: "Меню"
+		}
+	});
+
+	var api = $("#my-menu").data("mmenu");
+	api.bind("closed", function () {
+		$(".toggle-menu").removeClass("on");
+	});
+
+	$(".mobile-menu").click(function() {
+		var mmAPI = $("#my-menu").data( "mmenu" );
+		mmAPI.open();
+		var thiss = $(this).find(".toggle-mnu");
+		thiss.toggleClass("on");
+		$(".main-mnu").slideToggle();
+		return false;
+	});
+	
+
+	
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {

@@ -242,3 +242,21 @@ function(e){var n="mmenu",t="navbars",s="searchfield";e[n].addons[t][s]=function
  * Copyright (c) Fred Heusschen
  */
 function(e){var n="mmenu",t="navbars",s="title";e[n].addons[t][s]=function(s,i){var a,o,r=e[n]._c,l=e('<a class="'+r.title+'" />').appendTo(s),d=function(e){if(e=e||this.$pnls.children("."+r.current),!e.hasClass(r.vertical)){var n=e.find("."+this.conf.classNames[t].panelTitle);n.length||(n=e.children("."+r.navbar).children("."+r.title)),a=n.attr("href"),o=n.html()||i.title,l[a?"attr":"removeAttr"]("href",a),l[a||o?"removeClass":"addClass"](r.hidden),l.html(o)}};return this.bind("openPanel",d),this.bind("initPanels",function(e){d.call(this)}),0},e[n].configuration.classNames[t].panelTitle="Title"}(jQuery);
+(function ($) {
+  $.fn.equalHeights = function () {
+    var $items = $(this);
+    function equalize() {
+      $items.height('initial');
+      var maxH = $items.eq(0).height();
+      $items.each(function () {
+        maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
+      });
+      $items.height(maxH);
+    }
+    equalize();
+    $(window).bind('resize', function () {
+      equalize();
+    });
+  };
+})(jQuery);
+

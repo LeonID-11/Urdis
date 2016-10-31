@@ -1,5 +1,7 @@
 $(function() {
 	$(".sevices-item h4").equalHeights();
+	$(".new-item h4").equalHeights();
+	$(".new-item p").equalHeights();
 	
 	$(".top-line .sf-menu").superfish({
 		 cssArrows: false, 
